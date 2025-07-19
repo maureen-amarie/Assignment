@@ -1,0 +1,9 @@
+declare @time_started DATETIME = GETDATE() ---this declares a variable @time_started and sets its value to the current date and time using GETDATE()
+declare @number INT = 1 -- this declares an interger variable @number and initializes it to 1
+WHILE DATEDIFF(SECOND, @time_started, GETDATE()) < 10 --Starts a loop that continues as long as the number of seconds between @time_started and the current time (GETDATE()) is less than 10  and calculates how many seconds have passed since the loop started.
+
+BEGIN ---- Marks the beginning of the block of code that will be repeated in the loop.
+    PRINT @number; --Prints the current value of @number to the SQL output
+    SET @number = @number + 1; -- Increments the @number variable by 1
+
+END --Marks the end of the loop block
